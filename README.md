@@ -1,21 +1,29 @@
 [![DOI](https://zenodo.org/badge/800255038.svg)](https://zenodo.org/doi/10.5281/zenodo.11189007) 
 
-# [Your Team Name]
+# Coastal Resilience Champions: The many effects of sea level rise
 
 Welcome to the **[Your Team Name]** repository, an integral part of ESIIL and Earth Lab's Forest Carbon Codefest. This repository is the central hub for our team, encompassing our project overview, team member information, codebase, and more...
 
 #practice edit
 
 ## Our Project
-[Provide a brief overview of your project here.
+Climate change impacts on coastal and marine ecosystems. How can we monitor/predict coastal adnd marine ecosystem resilence under climate change. 
 
 ## Documentation
 - Access detailed documentation on our [GitHub Pages site](https://your-gh-pages-url/).
 
 
 ## Group Members
-- Member 1: Brief description
-- Member 2: Brief description
+- Member 1: Jansen Smith: Geologist, Paleogist at University of Minnesota Duluth;
+-           data science super power = temporal perspective
+-           polarities - in the middle, adaptable
+- Member 2: Kwame Sha: grew up in Brooklyn, spent time in South; audio engineer, environmental experise through cultural tradition - the south and Geechee nation
+-           superpower - adaptabilty/mutability, listening
+-            local knowledge
+- Member 3: Mark McCoughly: marine biology, coral restoration and big data analysis
+-           good with big data
+-           in the majority of groups but polarized 
+- Member 4: Lindsay Chipman: biogeochemical oceanography/coastal ecology
 - ...
 - [Link to more detailed bios or profiles if available and desired.]
 
