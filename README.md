@@ -1,13 +1,27 @@
 [![DOI](https://zenodo.org/badge/800255038.svg)](https://zenodo.org/doi/10.5281/zenodo.11189007) 
 
-# Coastal Resilience Champions: The many effects of sea level rise
+# Coastal Resilience Champions: The many effects of climate change on coastal areas
 
-Welcome to the **[Your Team Name]** repository, an integral part of ESIIL and Earth Lab's Forest Carbon Codefest. This repository is the central hub for our team, encompassing our project overview, team member information, codebase, and more...
+Welcome to the Coastal Resilience repository, an integral part of ESIIL and Earth Lab's Forest Carbon Codefest. This repository is the central hub for our team, encompassing our project overview, team member information, codebase, and more...
 
-#practice edit
 
 ## Our Project
 Climate change impacts on coastal and marine ecosystems. How can we monitor/predict coastal adnd marine ecosystem resilence under climate change. 
+
+Focus on using data to monitor baseline conditions (ecosystem services/natures contributions to people) and predicting changes to those services.  Look at both human and ecosystem dimensions of coastal areas.
+
+# Data Sources
+Data that shows extent of marsh area
+National Estuary Reserch Reserve system - e.g., Sapillo Island
+ArcGIS (GAP/LANDFIRE National Terrestrial Ecosystems)
+Sentinel2 Multispectral Data on AWS
+EPA water quality
+NOAA Digital Coast
+LiDAR
+
+final choices:
+NERR data - water quality, to define conditions of coastal areas, 
+ArcGIS - GAP/LANDFIRE National Terrestrial Ecosystems to show what land cover types/vegetation classes
 
 ## Documentation
 - Access detailed documentation on our [GitHub Pages site](https://your-gh-pages-url/).
