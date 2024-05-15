@@ -89,6 +89,59 @@ except Exception as e:
     raise
 ```
 
+```python
+# Mounting to MODIS land cover data and clipping it to bounding box (South Carolina)
+import numpy as np
+from osgeo import gdal, osr
+from shapely.geometry import box
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# First define the Cloud-Optimized-GeoTiff URL and create a virtual mount to it with gdal Open
+url = 'https://s3.openlandmap.org/arco/lc_mcd12q1v061.t1_c_500m_s_20210101_20211231_go_epsg.4326_v20230818.tif'
+dataset = gdal.Open(url)
+
+# Find the bounds that will clip the data to South Carolina
+bbox = [-83.0, 32.0, -78.0, 35.0]
+
+# Open the GDAL dataset
+dataset = gdal.Open(url)
+
+# Get the dataset's projection and geo-transform
+projection = dataset.GetProjection()
+geo_transform = dataset.GetGeoTransform()
+
+# Create spatial reference objects for transformations
+src_srs = osr.SpatialReference()
+src_srs.ImportFromWkt(projection)
+dst_srs = osr.SpatialReference()
+dst_srs.ImportFromEPSG(4326)  # EPSG:4326 is WGS84, the coordinate system of the bounding box
+
+# Create a transformation object
+transform = osr.CoordinateTransformation(dst_srs, src_srs)
+
+# Transform the bounding box coordinates to the dataset's coordinate system
+min_x, min_y, _ = transform.TransformPoint(bbox[0], bbox[1])
+max_x, max_y, _ = transform.TransformPoint(bbox[2], bbox[3])
+
+# Calculate pixel coordinates
+inv_geo_transform = gdal.InvGeoTransform(geo_transform)
+min_pixel_x, min_pixel_y = gdal.ApplyGeoTransform(inv_geo_transform, min_x, min_y)
+max_pixel_x, max_pixel_y = gdal.ApplyGeoTransform(inv_geo_transform, max_x, max_y)
+
+# Ensure pixel coordinates are within the dataset bounds
+min_pixel_x = max(0, int(min_pixel_x))
+min_pixel_y = max(0, int(min_pixel_y))
+max_pixel_x = min(dataset.RasterXSize, int(max_pixel_x))
+max_pixel_y = min(dataset.RasterYSize, int(max_pixel_y))
+
+# Read in the land cover type array and clip it to bounds and plot it
+band = dataset.GetRasterBand(1)
+array = band.ReadAsArray()
+clipped_array = array[max_pixel_y:min_pixel_y, min_pixel_x:max_pixel_x]
+plt.imshow(clipped_array)
+```
+
 
 ## Day 2 Report Back
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
