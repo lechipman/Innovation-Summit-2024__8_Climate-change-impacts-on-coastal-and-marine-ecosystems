@@ -23,6 +23,73 @@ Use the gradient of agreement (Kaner 20214) to make decisions as a team.
 
 ![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
+
+
+``` python
+import requests
+import geopandas as gpd
+import matplotlib.pyplot as plt
+from io import BytesIO
+import zipfile
+import os
+
+# Step 1: Download the data
+url = 'https://chs.coast.noaa.gov/htdata/Inundation/SLR/SLRdata/SC/SC_South_slr_data_dist.zip'
+response = requests.get(url)
+
+# Check if the response is successful
+if response.status_code == 200:
+    try:
+        with zipfile.ZipFile(BytesIO(response.content)) as z:
+            z.extractall('sea_level_data')
+    except zipfile.BadZipFile:
+        print("Error: The downloaded file is not a valid ZIP file.")
+else:
+    print(f"Error: Unable to download the file. Status code: {response.status_code}")
+
+# Step 2: Load the data from the geodatabase
+gdb_path = 'sea_level_data/SC_South_slr_final_dist.gdb'
+
+try:
+    # List all layers in the geodatabase
+    layers = gpd.io.file.fiona.listlayers(gdb_path)
+    print(f"Available layers: {layers}")
+
+    # Read the desired layer (replace 'SC_South_slr_3ft' with the desired layer name)
+    layer_name = 'SC_South_slr_3ft'
+    gdf = gpd.read_file(gdb_path, layer=layer_name)
+    
+    # Print column names to inspect
+    print(f"Columns in layer '{layer_name}': {gdf.columns}")
+except Exception as e:
+    print(f"Error loading geodatabase: {e}")
+    raise
+
+# Step 3: Filter data for the southeastern US (if needed)
+try:
+    # You can filter based on bounding box, state names, etc.
+    # For example, filter for South Carolina
+    bbox = [-83.0, 32.0, -78.0, 35.0]  # Bounding box for South Carolina
+    southeast_us_gdf = gdf.cx[bbox[0]:bbox[2], bbox[1]:bbox[3]]
+except Exception as e:
+    print(f"Error filtering data: {e}")
+    raise
+
+# Step 4: Plot the data
+try:
+    fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+    southeast_us_gdf.plot(ax=ax, column='gridcode', legend=True,  # Replace 'gridcode' with the correct column name
+                          legend_kwds={'label': "Sea Level Rise (meters)"})
+    plt.title(f'Projected Sea Level Rise in South Carolina - Layer: {layer_name}')
+    plt.xlabel('Longitude')
+    plt.ylabel('Latitude')
+    plt.show()
+except Exception as e:
+    print(f"Error plotting data: {e}")
+    raise
+```
+
+
 ## Day 2 Report Back
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
 
