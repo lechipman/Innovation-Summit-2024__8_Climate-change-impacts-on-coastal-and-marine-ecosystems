@@ -44,13 +44,14 @@ Please share the following information about yourself. Each team member should t
 ## Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
 Write the research question your team selected in the space below. Feel free to revise the original question.
 
-- [Insert research question here]
+- Climate change impacts on coastal and marine ecosystems: How can we monitor/predict coastal adnd marine ecosystem resilence under climate change?
+We are focusing on the use of data to monitor baseline conditions of tidal marsh ecosystems in the southeastern US and assess how those conditions have changed in the recent past. We will assess the impacts of these changes on local ecosystems and communities and suggest ways coastal ecosystems can prepare, adapt, and become more resilient to future changes.
 
 
 ## Project Title (approx. time: 5-10 mins)
 Craft a catchy title for your team’s project. Think of something that would grab attention at a conference or in a headline.
 
-- [Insert title here]
+- Coastal Resilience: Rising with Sea Level
 
 
 ## Promoting Resilience and Adaptation
@@ -64,9 +65,13 @@ Explore potential data sets for your project's topic from the [data library](htt
 
 ### Draft Potential Data Sets
   - **System Being Perturbed/Disrupted:**
-    - [List all potential data sets here]
+    - NERR monitoring
+    - C-CAP (coastal land cover change)
+    
+    - LANDFIRE/GAP (landcover/vegetation)
   - **Perturbator/Disrupter:**
-    - [List all potential data sets here]
+    - NOAA Digital coast (SLR)
+    - LiDAR DEMs
 
 ### Final Choice
   - **System Being Perturbed/Disrupted (Final Choice):**
