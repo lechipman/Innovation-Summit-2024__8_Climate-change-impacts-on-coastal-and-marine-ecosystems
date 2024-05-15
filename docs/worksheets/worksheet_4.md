@@ -6,15 +6,16 @@ Use this time to prepare for the final report back, where you'll share an intere
 Select one or more people from your group to give a final report back. You will share this page on the screen as your presentation. Presentations should be no longer than 4 minutes.
 
 - **Project Title:**
-    - [Insert project title here]
+    - Rising to the Occasion: Projecting and Preparing for Sea Level Rise
 - **Research Question:**
-    - [Insert research question here]
+    - Coastal Resilience: How can we project impacts from climate change and help coastal communities and ecosystems become increase resilience to SLR?
 - **One interesting graphic/finding:**
     - [Insert graphic/finding here]
+    - 
 - **What are you thinking about doing next with your team? Long-term, short-term?**
-    - [Insert response here]
+    - discussing nature based solutions for increasing ecossytem resilience to SLR, e.g., restoring natural infrastrure such as wetland vegetation, oyster bed,s and dune features 
 - **What’s missing: what resources, people, data sets, etc. does your team need?**
-    - [Insert response here]
+    - more time to develop ideas and investigate/use data sources
 
 
 ### Reminder
